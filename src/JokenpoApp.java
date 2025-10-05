@@ -1,4 +1,4 @@
-import model.JokenpoJogo;
+import br.senai.sp.jandira.jokenpo.model.JokenpoJogo;
 
 public class JokenpoApp {
     public static void main(String[] args) {

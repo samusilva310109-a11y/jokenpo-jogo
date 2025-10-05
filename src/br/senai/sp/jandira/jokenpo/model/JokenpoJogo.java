@@ -1,4 +1,4 @@
-package model;
+package br.senai.sp.jandira.jokenpo.model;
 
 import java.util.Random;
 import java.util.Scanner;

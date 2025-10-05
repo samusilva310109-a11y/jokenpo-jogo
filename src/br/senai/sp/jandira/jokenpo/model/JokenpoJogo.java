@@ -17,6 +17,7 @@ public class JokenpoJogo {
         System.out.println("Escolha uma das opções: ");
         System.out.println("---------------------------");
         System.out.printf("(1)Pedra %n(2)Papel %n(3)Tesoura%n");
+        System.out.println("---------------------------");
         System.out.print("Digite a sua escolha: ");
         escolhaDoJogador = resposta.nextInt();
 
@@ -50,7 +51,7 @@ public class JokenpoJogo {
         if (escolhaDoJogador == 1){
             escolhaJogadorPorExtenso = "Pedra";
         } else if (escolhaDoJogador == 2) {
-            escolhaCompurtadorPorExtenso = "Papel";
+            escolhaJogadorPorExtenso = "Papel";
         }else {
             escolhaJogadorPorExtenso = "Tesoura";
         }
@@ -65,6 +66,7 @@ public class JokenpoJogo {
         exibirResultado();
     }
     public void exibirResultado(){
+        System.out.println(" ");
         System.out.println("Você escolheu: " + escolhaJogadorPorExtenso);
         System.out.println("O computador escolheu: " + escolhaCompurtadorPorExtenso);
         System.out.println(" ");

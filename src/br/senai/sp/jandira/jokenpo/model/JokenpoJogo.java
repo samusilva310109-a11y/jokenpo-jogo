@@ -10,9 +10,13 @@ public class JokenpoJogo {
     String resultado;
     String escolhaJogadorPorExtenso;
     String escolhaCompurtadorPorExtenso;
+    String reiniciarJogo;
+
 
     public void capturarEscolhaDoJogador(){
         Scanner resposta = new Scanner(System.in);
+        System.out.println("***VAMOS JOGAR JOKENPÔ!***");
+        System.out.println("---------------------------");
 
         System.out.println("Escolha uma das opções: ");
         System.out.println("---------------------------");
@@ -21,7 +25,7 @@ public class JokenpoJogo {
         System.out.print("Digite a sua escolha: ");
         escolhaDoJogador = resposta.nextInt();
 
-        resposta.close();
+
         gerarEscolhaDoComputador();
     }
     public void gerarEscolhaDoComputador(){
@@ -48,6 +52,7 @@ public class JokenpoJogo {
         exibirAsEscolhasPorExtenso();
     }
     public void exibirAsEscolhasPorExtenso(){
+        //escolhas do jogador
         if (escolhaDoJogador == 1){
             escolhaJogadorPorExtenso = "Pedra";
         } else if (escolhaDoJogador == 2) {
@@ -55,7 +60,7 @@ public class JokenpoJogo {
         }else {
             escolhaJogadorPorExtenso = "Tesoura";
         }
-
+        //escolhas do computador
         if (escolhaDoComputador == 1){
            escolhaCompurtadorPorExtenso = "Pedra";
         } else if (escolhaDoComputador == 2) {
@@ -71,6 +76,24 @@ public class JokenpoJogo {
         System.out.println("O computador escolheu: " + escolhaCompurtadorPorExtenso);
         System.out.println(" ");
         System.out.println(resultado);
-    }
 
+        jogarNovamente();
+    }
+    public void jogarNovamente(){
+        Scanner restarter = new Scanner(System.in);
+
+        System.out.print("Jogar novamente (S/N)? ");
+        reiniciarJogo = restarter.nextLine();
+        System.out.println(" ");
+
+        if (reiniciarJogo.equalsIgnoreCase("S")){
+            capturarEscolhaDoJogador();
+        } else if (reiniciarJogo.equalsIgnoreCase("N")) {
+            System.out.println("* * * J O G O  E N C E R R A D O * * *");
+        }else {
+            System.out.println("Desculpe, comando não reconhecido :(. Tente novamente.");
+            jogarNovamente();
+        }
+
+    }
 }
